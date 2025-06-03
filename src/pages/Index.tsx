@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ExternalLink, Trophy, Users, Calendar, Star } from "lucide-react";
+import { ExternalLink, Users, Calendar, Star } from "lucide-react";
 
 const Index = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -12,9 +12,8 @@ const Index = () => {
   }, []);
 
   const stats = [
-    { icon: Trophy, label: "Матчей в FTCL", value: "50+" },
-    { icon: Users, label: "Активных фанатов", value: "1000+" },
-    { icon: Calendar, label: "Лет истории", value: "5+" },
+    { icon: Users, label: "Активных фанатов", value: "150+" },
+    { icon: Calendar, label: "Лет истории", value: "2+" },
     { icon: Star, label: "Рейтинг", value: "★★★★★" },
   ];
 
@@ -35,7 +34,11 @@ const Index = () => {
             <div className="mb-8 flex justify-center">
               <div className="relative">
                 <div className="w-32 h-32 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center shadow-2xl animate-pulse">
-                  <span className="text-4xl font-bold text-white">A</span>
+                  <img 
+                    src="/lovable-uploads/c3f35288-db72-4c8e-b6a8-d5406bdcc61a.png" 
+                    alt="Atalanta Logo" 
+                    className="w-28 h-28 object-contain"
+                  />
                 </div>
                 <div className="absolute -inset-4 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full opacity-20 animate-ping"></div>
               </div>
@@ -86,11 +89,14 @@ const Index = () => {
       {/* Stats Section */}
       <div className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+          <h2 className="text-5xl md:text-6xl font-bold text-center mb-6 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
             Наши достижения
           </h2>
+          <p className="text-xl md:text-2xl text-center mb-16 text-slate-300 max-w-3xl mx-auto leading-relaxed">
+            Команда с амбициями и постоянным стремлением к победе в мире телеграм-футбола
+          </p>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             {stats.map((stat, index) => (
               <Card 
                 key={index}
@@ -99,8 +105,8 @@ const Index = () => {
               >
                 <CardContent className="p-8 text-center">
                   <stat.icon className="h-12 w-12 mx-auto mb-4 text-cyan-400" />
-                  <div className="text-3xl font-bold text-white mb-2">{stat.value}</div>
-                  <div className="text-slate-400">{stat.label}</div>
+                  <div className="text-4xl font-bold text-white mb-3">{stat.value}</div>
+                  <div className="text-lg text-slate-300">{stat.label}</div>
                 </CardContent>
               </Card>
             ))}
